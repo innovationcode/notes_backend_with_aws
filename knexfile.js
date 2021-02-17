@@ -6,7 +6,7 @@ module.exports = {
   development: {
     client: 'pg',
 
-    connection: 'postgres://postgres:notes-db-password@database-notes.cfwpbdz2tkh3.us-east-1.rds.amazonaws.com/notes_db?ssl=true', 
+    connection: 'postgres://localhost/notes_db', 
       
     migrations: {
         directory: './database/migrations',
@@ -20,7 +20,8 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: 'database-notes.cfwpbdz2tkh3.us-east-1.rds.amazonaws.com',
+
+    connection: process.env.DATABASE_URI,
  
    
     migrations: {
